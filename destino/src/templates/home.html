@@ -4,14 +4,16 @@
 <h3>Con Templantes</h3>
 
 <p>
-    {{myText}},
+    {{myText|upper|truncatechars:"16"}},
     {{myNumber}}
 </p>
 <ul>
   {% for myItem in myList %}
-    <li> {{forloop.counter}} - {{myItem}} 
+    <li> {{forloop.counter}} - {{myItem|add:2}} 
     {% if myItem == 33 %}
       - Este número es mágico
+    {% elif myItem|divisibleby:2 %}
+      - este número es par 
     {% elif myItem > 50 %}
       - Este número es mayor que 50
     {% endif %}
