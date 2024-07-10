@@ -11,6 +11,14 @@ class PersonaForm(forms.ModelForm):
         'donador',
     ]
 
+  def clean_nombres(self, *args, **kwargs):
+    print('paso')
+    name = self.cleaned_data.get('nombre')
+    if name.istitle():
+      return name
+    else:
+      raise forms.ValidationError('La primera letra debe estar en mayúsculas')
+
 class RawPersonaForm(forms.Form):
   nombre = forms.CharField(
     widget= forms.Textarea(
