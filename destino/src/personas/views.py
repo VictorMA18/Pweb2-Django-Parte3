@@ -8,7 +8,7 @@ def personaTestView(request):
     context = {
             'objeto': obj,
         }
-    return render(request, 'personas/test.html', context)
+    return render(request, 'personas/descripcion.html', context)
 
 def personaCreateView(request):
     form = PersonaForm(request.POST or None)
