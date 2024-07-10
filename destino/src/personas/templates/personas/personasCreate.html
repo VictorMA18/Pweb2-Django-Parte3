@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content%}
 
-<form action='.' method='GET'> {% csrf_token %}
+<form action='.' method='GET'>
   {{form.as_p}}
   <input type='text' name='q' placeholder='buscar'/>
   <input type='submit' value='Buscar'/>
