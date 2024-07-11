@@ -57,3 +57,10 @@ def personasDeleteView(request, myID):
         'objeto': obj,
         }
     return render(request, 'personas/personasBorrar.html', context)
+
+def personasListView(request):
+    queryset = Persona.objects.all()
+    context = {
+        'objectList': queryset,
+    }
+    return render(request, 'personas/personaLista.html', context)
